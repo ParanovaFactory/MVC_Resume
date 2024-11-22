@@ -1,0 +1,36 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Experiences>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Experience List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Subtitle</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ExperienceId</td>
+            <td>@item.ExperienceTitle</td>
+            <td>@item.ExperienceSubtitle</td>
+            <td>@item.ExperienceDescription</td>
+            <td>@item.ExperienceDate</td>
+            <td>
+                <a href="/Experience/Edit/@item.ExperienceId" class="btn btn-warning">Update</a>
+                <a href="/Experience/Delete/@item.ExperienceId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Experience/Add/" class="btn btn-success">Add New Experience</a>

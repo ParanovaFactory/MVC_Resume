@@ -1,0 +1,16 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Certificates>
+
+
+<div class="my-auto">
+    <h2 class="mb-5">Awards &amp; Certifications</h2>
+    @foreach (var item in Model)
+    {
+        <ul class="fa-ul mb-0">
+            <li>
+                <i class="fa-li fa fa-trophy text-warning"></i>
+                <a href="@item.CertificateUrl">@item.CertificateTitle</a> - @item.CertificateOrganization (@item.CertificateTime) - @item.CertificateDate
+            </li>
+        </ul>
+    }
+</div>

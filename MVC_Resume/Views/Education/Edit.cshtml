@@ -1,0 +1,28 @@
+﻿@model MVC_Resume.Models.Entity.Tbl_Educations
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Edit Education</h2>
+<br />
+@using (Html.BeginForm("Edit", "Education", FormMethod.Post))
+{
+    <form>
+        <label>Title</label>
+        @Html.TextBoxFor(m => m.EducationTitle, new { @class = "form-control" })
+        <label>Subtitle</label>
+        @Html.TextBoxFor(m => m.EducationSubtitle, new { @class = "form-control" })
+        <label>Date</label>
+        @Html.TextBoxFor(m => m.EducationDate, new { @class = "form-control" })
+        <label>Average</label>
+        @Html.TextBoxFor(m => m.EducationAvg, new { @class = "form-control" })
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.EducationDescription, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(m => m.EducationId)
+        <button class="btn btn-success">SAVE</button>
+    </form>
+}

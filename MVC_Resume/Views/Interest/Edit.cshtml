@@ -1,0 +1,20 @@
+﻿@model MVC_Resume.Models.Entity.Tbl_Interests
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Edit Education</h2>
+<br />
+@using (Html.BeginForm("Edit", "Interest", FormMethod.Post))
+{
+    <form>
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.InterestDescriptions, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(m => m.InterestId)
+        <button class="btn btn-success">SAVE</button>
+    </form>
+}

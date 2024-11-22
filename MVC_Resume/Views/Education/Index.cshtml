@@ -1,0 +1,38 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Educations>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Education List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Subtitle</th>
+        <th>Description</th>
+        <th>Average</th>
+        <th>Date</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EducationId</td>
+            <td>@item.EducationTitle</td>
+            <td>@item.EducationSubtitle</td>
+            <td>@item.EducationDescription</td>
+            <td>@item.EducationAvg</td>
+            <td>@item.EducationDate</td>
+            <td>
+                <a href="/Education/Edit/@item.EducationId" class="btn btn-warning">Update</a>
+                <a href="/Education/Delete/@item.EducationId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Education/Add/" class="btn btn-success">Add New Education</a>

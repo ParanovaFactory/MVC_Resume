@@ -1,0 +1,37 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Certificates>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Certificate List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Organization</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Url</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CertificateId</td>
+            <td>@item.CertificateTitle</td>
+            <td>@item.CertificateOrganization</td>
+            <td>@item.CertificateTime</td>
+            <td>@item.CertificateDate</td>
+            <td>@item.CertificateUrl</td>
+            <td>
+                <a href="/Certificate/Edit/@item.CertificateId" class="btn btn-warning">Update</a>
+                <a href="/Certificate/Delete/@item.CertificateId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Certificate/Add/" class="btn btn-success">Add New Certificate</a>

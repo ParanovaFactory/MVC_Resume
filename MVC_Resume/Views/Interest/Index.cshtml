@@ -1,0 +1,27 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Interests>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Education List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Description</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.InterestId</td>
+            <td>@item.InterestDescriptions</td>
+            <td>
+                <a href="/Interest/Edit/@item.InterestId" class="btn btn-warning">Update</a>
+            </td>
+        </tr>
+    }
+</table>

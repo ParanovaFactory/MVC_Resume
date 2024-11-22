@@ -1,0 +1,27 @@
+﻿@model MVC_Resume.Models.Entity.Tbl_Certificates
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Edit Certificate</h2>
+<br />
+@using (Html.BeginForm("Edit", "Certificate", FormMethod.Post))
+{
+    <form>
+        <label>Title</label>
+        @Html.TextBoxFor(m => m.CertificateTitle, new { @class = "form-control" })
+        <label>Organization</label>
+        @Html.TextBoxFor(m => m.CertificateOrganization, new { @class = "form-control" })
+        <label>Time</label>
+        @Html.TextBoxFor(m => m.CertificateTime, new { @class = "form-control" })
+        <label>Date</label>
+        @Html.TextBoxFor(m => m.CertificateDate, new { @class = "form-control" })
+        <label>Url</label>
+        @Html.TextBoxFor(m => m.CertificateUrl, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(m => m.CertificateId)
+        <button class="btn btn-success">SAVE</button>
+    </form>
+}

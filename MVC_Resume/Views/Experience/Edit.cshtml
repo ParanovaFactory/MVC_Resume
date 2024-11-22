@@ -1,0 +1,27 @@
+﻿@model MVC_Resume.Models.Entity.Tbl_Experiences
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Edit Experience</h2>
+<br />
+@using (Html.BeginForm("Edit", "Experience", FormMethod.Post))
+{
+    <form>
+        <label>Title</label>
+        @Html.TextBoxFor(m => m.ExperienceTitle, new { @class = "form-control" })
+        <label>Subtitle</label>
+        @Html.TextBoxFor(m => m.ExperienceSubtitle, new { @class = "form-control" })
+        <label>Date</label>
+        @Html.TextBoxFor(m => m.ExperienceDate, new { @class = "form-control" })
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.ExperienceDescription, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(m => m.ExperienceId)
+        <button class="btn btn-success">SAVE</button>
+    </form>
+}

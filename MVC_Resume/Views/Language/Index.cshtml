@@ -1,0 +1,30 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Languages>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Education List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Description</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.LanguageId</td>
+            <td>@item.LanguageDescription</td>
+            <td>
+                <a href="/Language/Edit/@item.LanguageId" class="btn btn-warning">Update</a>
+                <a href="/Language/Delete/@item.LanguageId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Language/Add/" class="btn btn-success">Add New Education</a>

@@ -1,0 +1,31 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Skills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Skill List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Subtitle</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SkillId</td>
+            <td>@item.SkillTitle</td>
+            <td>@item.SkillName</td>
+            <td>
+                <a href="/Skill/Edit/@item.SkillId" class="btn btn-warning">Update</a>
+                <a href="/Skill/Delete/@item.SkillId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Skill/Add/" class="btn btn-success">Add New Skill</a>

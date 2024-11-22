@@ -1,0 +1,22 @@
+﻿@model MVC_Resume.Models.Entity.Tbl_Skills
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Edit Skill</h2>
+<br />
+@using (Html.BeginForm("Edit", "Skill", FormMethod.Post))
+{
+    <form>
+        <label>Title</label>
+        @Html.TextBoxFor(m => m.SkillTitle, new { @class = "form-control" })
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.SkillName, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(m => m.SkillId)
+        <button class="btn btn-success">SAVE</button>
+    </form>
+}

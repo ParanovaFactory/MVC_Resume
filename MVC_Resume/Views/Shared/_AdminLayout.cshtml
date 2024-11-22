@@ -1,0 +1,170 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MVC_Resume</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/web/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/web/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="/Public/Index" class="brand-link">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6fPfRtNoxDd-PpbR_jfQgaMK1UZ152ltb5A&s" alt="MVS_RESUME Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Web Site</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="https://media.licdn.com/dms/image/v2/C5603AQG3YfAE8citpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1587735773701?e=1737590400&v=beta&t=65FLPpX2_b6jgCyW6LdubmFOD6ZTGpGFsu1qigCGtho" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="https://www.linkedin.com/in/sad%C4%B1k-berkay-karaduman-7407621a7/" class="d-block">Sadık Berkay Karaduman</a>
+                    </div>
+                </div>
+
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+         with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="/About/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-address-card"></i>
+                                <p>
+                                    About Me
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Experience/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-briefcase"></i>
+                                <p>
+                                    Experiences
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Education/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-graduation-cap"></i>
+                                <p>
+                                    Educations
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Skill/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-bicycle"></i>
+                                <p>
+                                    Skills
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Certificate/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-certificate"></i>
+                                <p>
+                                    Certificates
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Language/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-language"></i>
+                                <p>
+                                    Languages
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Interest/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-car"></i>
+                                <p>
+                                    Interests
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Contact/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-phone-square"></i>
+                                <p>
+                                    Contact
+                                </p>
+                                <span class="right badge badge-danger">New</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Login/Logout/" class="nav-link">
+                                <i class="nav-icon fa fa-arrow-left"></i>
+                                <p>
+                                    Logout
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderBody()
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <footer class="main-footer">
+            <strong>Copyright &copy; @DateTime.Now.Year <a href="https://github.com/ParanovaFactory">Sadık Berkay Karaduman</a>.</strong> All rights reserved.
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="~/web/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/web/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/web/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/web/dist/js/demo.js"></script>
+</body>
+</html>

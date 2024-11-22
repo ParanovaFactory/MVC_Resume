@@ -1,0 +1,17 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Skills>
+
+<div class="my-auto">
+    <h2 class="mb-5">Skills</h2>
+    @foreach (var item in Model)
+    {<div class="subheading mb-3">
+            <a>@item.SkillTitle</a>
+        </div>
+        <ul class="fa-ul mb-0">
+            <li>
+                <i class="fa-li fa fa-check"></i>
+                <a>@item.SkillName</a>
+            </li>
+        </ul>
+    }
+</div>

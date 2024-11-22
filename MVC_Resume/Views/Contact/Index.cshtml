@@ -1,0 +1,30 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Contact List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Name Surname</th>
+        <th>Date</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ContactId</td>
+            <td>@item.ContactNameSurname</td>
+            <td>@item.ContactDate</td>
+            <td>
+                <a href="/Contact/Edit/@item.ContactId" class="btn btn-warning">Details</a>
+                <a href="/Contact/Delete/@item.ContactId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

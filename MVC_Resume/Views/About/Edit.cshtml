@@ -1,0 +1,36 @@
+﻿@model MVC_Resume.Models.Entity.Tbl_About
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Edit About</h2>
+<br />
+@using (Html.BeginForm("Edit", "About", FormMethod.Post))
+{
+    <form>
+        <label>Title</label>
+        @Html.TextBoxFor(m => m.AboutName, new { @class = "form-control" })
+        <label>Subtitle</label>
+        @Html.TextBoxFor(m => m.AboutSurname, new { @class = "form-control" })
+        <label>Date</label>
+        @Html.TextBoxFor(m => m.AboutAddress, new { @class = "form-control" })
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.AboutMail, new { @class = "form-control" })
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.AboutPhone, new { @class = "form-control" })
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.AboutContext, new { @class = "form-control" })
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.AboutGitHub, new { @class = "form-control" })
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.AboutLinkedin, new { @class = "form-control" })
+        <label>Description</label>
+        @Html.TextAreaFor(m => m.AboutImage, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(m => m.AboutId)
+        <button class="btn btn-success">SAVE</button>
+    </form>
+}

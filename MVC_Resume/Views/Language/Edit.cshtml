@@ -1,0 +1,19 @@
+﻿@model MVC_Resume.Models.Entity.Tbl_Languages
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Edit Language</h2>
+<br />
+@using (Html.BeginForm("Edit", "Language", FormMethod.Post))
+{
+    <form>
+        <label>Description</label>
+        @Html.TextBoxFor(m => m.LanguageDescription, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(m => m.LanguageId)
+        <button class="btn btn-success">SAVE</button>
+    </form>
+}

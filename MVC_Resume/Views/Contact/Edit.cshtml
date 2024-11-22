@@ -1,0 +1,23 @@
+﻿@model MVC_Resume.Models.Entity.Tbl_Contact
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Contact Details</h2>
+<br />
+<form>
+    <label>Name Surname</label>
+    @Html.TextBoxFor(m => m.ContactNameSurname, new { @class = "form-control" })
+    <label>Mail</label>
+    @Html.TextBoxFor(m => m.ContactMail, new { @class = "form-control" })
+    <label>Subject</label>
+    @Html.TextBoxFor(m => m.ContactSubject, new { @class = "form-control" })
+    <label>Date</label>
+    @Html.TextBoxFor(m => m.ContactDate, new { @class = "form-control" })
+    <label>Description</label>
+    @Html.TextAreaFor(m => m.ContactContext, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(m => m.ContactId)
+</form>

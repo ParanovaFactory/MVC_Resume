@@ -1,0 +1,44 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_About>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>About List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Address</th>
+        <th>Mail</th>
+        <th>Phone</th>
+        <th>Context</th>
+        <th>GitHub</th>
+        <th>LinkedIn</th>
+        <th>Image</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AboutId</td>
+            <td>@item.AboutName</td>
+            <td>@item.AboutSurname</td>
+            <td>@item.AboutAddress</td>
+            <td>@item.AboutMail</td>
+            <td>@item.AboutPhone</td>
+            <td>@item.AboutContext</td>
+            <td>@item.AboutGitHub</td>
+            <td>@item.AboutLinkedin</td>
+            <td>@item.AboutImage</td>
+            <td>
+                <a href="/About/Edit/@item.AboutId" class="btn btn-warning">Update</a>
+            </td>
+        </tr>
+    }
+</table>

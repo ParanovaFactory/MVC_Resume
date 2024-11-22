@@ -1,0 +1,19 @@
+﻿@using MVC_Resume.Models.Entity
+@model List<Tbl_Experiences>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Experience</h2>
+    @foreach (var item in Model)
+    {
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+                <h3 class="mb-0">@item.ExperienceTitle</h3>
+                <div class="subheading mb-3">@item.ExperienceSubtitle</div>
+                <p>@item.ExperienceDescription</p>
+            </div>
+            <div class="resume-date text-md-right">
+                <span class="text-primary">@item.ExperienceDate</span>
+            </div>
+        </div>
+    }
+</div>
